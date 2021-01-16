@@ -1,0 +1,185 @@
+Scenario
+A junior magician has picked a secret number. He has hidden it in a variable named secret_number. 
+He wants everyone who run his program to play the Guess the secret number game, and guess what number he has picked for them. 
+Those who don't guess the number will be stuck in an endless loop forever! Unfortunately, he does not know how to complete the code.
+
+Your task is to help the magician complete the code in the editor in such a way so that the code:
+
+will ask the user to enter an integer number;
+will use a while loop;
+will check whether the number entered by the user is the same as the number picked by the magician. 
+If the number chosen by the user is different than the magician's secret number, 
+the user should see the message "Ha ha! You're stuck in my loop!" and be prompted to enter a number again. 
+If the number entered by the user matches the number picked by the magician, the number should be printed to the screen,
+and the magician should say the following words: "Well done, muggle! You are free now."
+The magician is counting on you! Don't disappoint him.
+
+secret_number = 777
+
+print(
+"""
++================================+
+| Welcome to my game, muggle!    |
+| Enter an integer number        |
+| and guess what number I've     |
+| picked for you.                |
+| So, what is the secret number? |
++================================+
+""")
+my_num = int(input("Enter an integer number :"))
+
+while my_num != secret_number:
+    print("Ha ha! You're stuck in my loop!")
+    my_num = int(input("Enter an integer number again :"))
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Scenario
+write a program that uses a for loop to "count mississippily" to five. Having counted to five, 
+the program should print to the screen the final message "Ready or not, here I come!"
+
+import time
+for i in range(1,6):
+    time.sleep(1)
+    print(i, "Mississippi")
+print("Ready or not, here I come!")
+---------------------------------------------------------------------------------------------------------------------------------------------
+Scenario
+The break statement is used to exit/terminate a loop.
+
+Design a program that uses a while loop and continuously asks the user to enter a word unless the user enters "chupacabra" as the secret exit word, 
+in which case the message "You've successfully left the loop." should be printed to the screen, and the loop should terminate.
+
+Don't print any of the words entered by the user. Use the concept of conditional execution and the break statement.
+
+
+secret_word = "chupacabra"
+word = input("Enter a word: ")
+
+while True:
+    if word == secret_word:
+        break
+    else:
+        word = input("You are wrong! Enter another word :")
+print("You've successfully left the loop.")
+--------------------------------------------------------------------------------------------------------------------------------------------
+Scenario
+The continue statement is used to skip the current block and move ahead to the next iteration, without executing the statements inside the loop.
+
+It can be used with both the while and for loops.
+
+Your task here is very special: you must design a vowel eater! Write a program that uses:
+
+a for loop;
+the concept of conditional execution (if-elif-else)
+the continue statement.
+Your program must:
+
+ask the user to enter a word;
+use conditional execution and the continue statement to "eat" the following vowels A, E, I, O, U from the inputted word;
+print the uneaten letters to the screen, each one of them on a separate line.
+
+userWord = input("Enter a word :")
+userWord = userWord.upper()
+for letter in userWord:
+    if letter == "A":
+        continue
+    elif letter == "E":
+        continue
+    elif letter == "I":
+        continue
+    elif letter == "O":
+        continue
+    elif letter == "U":
+        continue
+    else:
+        print (letter)
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+Scenario
+Your task here is even more special than before: you must redesign the (ugly) vowel eater from the previous lab (3.1.2.10) and create a better,
+upgraded (pretty) vowel eater! Write a program that uses:
+
+a for loop;
+the concept of conditional execution (if-elif-else)
+the continue statement.
+Your program must:
+
+ask the user to enter a word;
+use conditional execution and the continue statement to "eat" the following vowels A, E, I, O, U from the inputted word;
+assign the uneaten letters to the wordWithoutVovels variable and print the variable to the screen.
+Look at the code in the editor. We've created wordWithoutVovels and assigned an empty string to it. 
+Use concatenation operation to ask Python to combine selected letters into a longer string during subsequent loop turns,
+and assign it to the wordWithoutVovels variable.
+
+
+wordWithoutVovels = ""
+userWord = input("Enter a word :")
+userWord = userWord.upper()
+for letter in userWord:
+    if letter == "A":
+        continue
+    elif letter == "E":
+        continue
+    elif letter == "I":
+        continue
+    elif letter == "O":
+        continue
+    elif letter == "U":
+        continue
+    else:
+        wordWithoutVovels +=letter
+print(wordWithoutVovels)
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Scenario
+Listen to this story: a boy and his father, a computer programmer, are playing with wooden blocks. They are building a pyramid.
+
+Their pyramid is a bit weird, as it is actually a pyramid-shaped wall - it's flat. 
+The pyramid is stacked according to one simple principle: each lower layer contains one block more than the layer above.
+
+The figure illustrates the rule used by the builders:
+
+
+
+Your task is to write a program which reads the number of blocks the builders have, and outputs the height of the pyramid that can be built using these blocks.
+
+Note: the height is measured by the number of fully completed layers - if the builders don't have a sufficient number of blocks and cannot complete the next layer, 
+they finish their work immediately.
+
+blocks = int(input("Enter the number of blocks: "))
+height = 0
+#
+# Write your code here.
+#	
+while blocks>height:
+    height += 1
+    blocks = blocks-height
+    
+print("The height of the pyramid:", height)
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Scenario
+In 1937, a German mathematician named Lothar Collatz formulated an intriguing hypothesis (it still remains unproven) which can be described in the following way:
+
+take any non-negative and non-zero integer number and name it c0;
+if it's even, evaluate a new c0 as c0 ÷ 2;
+otherwise, if it's odd, evaluate a new c0 as 3 × c0 + 1;
+if c0 ≠ 1, skip to point 2.
+The hypothesis says that regardless of the initial value of c0, it will always go to 1.
+
+c0=int(input("Enter non nagative non zero int number :"))
+steps = 0
+while c0 !=1:
+    if c0 % 2==0:
+        c0 = int(c0/2)
+        steps +=1
+        print(c0)
+    else:
+        c0 = 3*c0+1
+        steps += 1
+        print(c0)
+
+print("Steps",steps)
+
