@@ -1,0 +1,60 @@
+Scenario
+There once was a hat. The hat contained no rabbit, but a list of five numbers: 1, 2, 3, 4, and 5.
+
+Your task is to:
+
+write a line of code that prompts the user to replace the middle number in the list with an integer number entered by the user (step 1)
+write a line of code that removes the last element from the list (step 2)
+write a line of code that prints the length of the existing list (step 3.)
+
+hatList = [1, 2, 3, 4, 5]  # This is an existing list of numbers hidden in the hat.
+
+# Step 1: write a line of code that prompts the user
+usernumber = int(input("Enter a number"))
+# to replace the middle number with an integer number entered by the user.
+hatList[2] = usernumber
+# Step 2: write a line of code here that removes the last element from the list.
+del hatList[4]
+# Step 3: write a line of code here that prints the length of the existing list.
+print("Length of list",len(hatList))
+print(hatList)
+
+----------------------------------------------------------------------------------------------------------------------------------------
+Write a program that reflects these changes and lets you practice with the concept of lists. Your task is to:
+
+step 1: create an empty list named beatles;
+step 2: use the append() method to add the following members of the band to the list: John Lennon, Paul McCartney, and George Harrison;
+step 3: use the for loop and the append() method to prompt the user to add the following members of the band to the list: Stu Sutcliffe, and Pete Best;
+step 4: use the del instruction to remove Stu Sutcliffe and Pete Best from the list;
+step 5: use the insert() method to add Ringo Starr to the beginning of the list.
+
+# step 1
+beatles = []
+print("Step 1:", beatles)
+
+# step 2
+beatles.append("John Lennon")
+beatles.append("Paul McCartney")
+beatles.append("George Harrison")
+print("Step 2:", beatles)
+
+# step 3
+for i in range(1):
+    beatles.append("Stu Sutcliffe")
+    beatles.append("Pete Best")
+print("Step 3:", beatles)
+
+# step 4
+del beatles[3]
+del beatles[3]
+print("Step 4:", beatles)
+
+# step 5
+beatles.insert(3,"Ringo Starr")
+print("Step 5:", beatles)
+
+
+# testing list legth
+print("The Fab", len(beatles))
+
+---------------------------------------------------------------------------------------------------------------------------------
